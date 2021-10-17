@@ -1,4 +1,4 @@
-# конвертирует число из 10 основание в любое другое
+# конвертирует число из 10 основание в любое другое путём перебора чисел до определённого основания
 
 def convertToBase(num, base):
 	bases = list('0123456789ABCDEFGHIJKLMNOQRSTUVWXYZabcdefghijklmnopqrstuvwxyz') # записал цифры в разных основаниях
