@@ -2,8 +2,8 @@
 
 def convertToBase(num, base):
 	bases = '0123456789'
-
 	result = ''
+	
 	while num > 0:
 		result += bases[num % base]
 		num //= base

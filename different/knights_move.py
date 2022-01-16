@@ -1,5 +1,3 @@
-x, y = map(lambda x: int(x), input('Введите коэфициэнты: (x y)\n').split(' '))
-
 def generateDesk(initially, modified):
 	desk = []
 	for desk_y in range(1, 9):
@@ -14,8 +12,11 @@ def generateDesk(initially, modified):
 
 	return desk
 
-moves = [-2, -1, 1, 2]
-variants = []
+
+x, y = map(lambda x: int(x), input('Введите коэфициэнты: (x y)\n').split(' ')) # ввод координат коня
+moves = [-2, -1, 1, 2] # все возможные ходы, которые может сделать конь
+variants = [] # массив, в который будет записаны все возможные ходы
+
 for moveX in moves:
 	for moveY in moves:
 		if (abs(moveX) != abs(moveY)):
