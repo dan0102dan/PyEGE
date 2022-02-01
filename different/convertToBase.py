@@ -7,5 +7,3 @@ def convertToBase(num, base):
 		num //= base
 	
 	return result[::-1]
-
-print(convertToBase(int('010010001110010', 2), 8))

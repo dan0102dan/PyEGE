@@ -21,7 +21,7 @@ try:
 		assert solveQquation(2, 5, 3) == (-1, -1.5)
 		print('Функция проверена')
 	except:
-		print('Функция работает неверно')
+		print('Функция неисправна')
 	a, b, c = map(lambda x: int(x), input('Введите коэфициэнты:\n').split(' '))
 
 	print(solveQquation(a, b, c))
