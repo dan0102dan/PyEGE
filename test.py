@@ -1,34 +1,19 @@
-with open('27-A.txt') as f:
-	N = int(f.readline())
-
-	summa = 0
-	minxNeChetRazn = 0
-	countChet, countNeChet = 0, 0
-
-	for i in range(N):
-		n1, n2 = map(int, f.readline().split())
-		curMin = min(n1, n2)
-
-		for x in [n1, n2]:
-			if x & 1 == 0:
-				countChet += 1
+s = 'BADAABADADA'
+etr = ['BA', 'DA']
+maxim, cur = 0, 0
+i = 0
+while i <= len(s) - 1:
+	if s[i:i+2] in etr:
+		for j in range(i, len(s) - 1, 2):
+			if s[j:j+2] in etr:
+				cur += 1
+				if cur > maxim:
+					maxim = cur
 			else:
-				countNeChet += 1
-		
-		
-		summa += curMin
-
-		if curMin & 1 == 1:
-			minxNeChetRazn = min(abs(n1 - n2), minxNeChetRazn)
-
-
-	if countNeChet > countChet:
-		if summa & 1 == 1:
-			print(summa)
-		else:
-			print(summa - minxNeChetRazn)
+				i = j - 2
+				cur = 0
+				break
 	else:
-		if summa & 1 == 0:
-			print(summa)
-		else:
-			print(summa - minxNeChetRazn)
+		cur = 0
+	i += 1
+print(maxim)
