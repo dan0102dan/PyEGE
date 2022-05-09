@@ -5,15 +5,13 @@
  
 # Примечание. Простое число — натуральное число, имеющее ровно два различных натуральных делителя — единицу и самого себя.
 
-def isSimple(num):
-	return all(num % x != 0 for x in range(2, int(num / 2) + 1))
+def isPrime(num):
+	return all(num % x != 0 for x in range(2, int(num ** 0.5 + 1)))
 
 results = []
 for [i, x] in enumerate(range(245690, 245756 + 1), start=1):
 	if isSimple(x):
 		results.append((i, x))
-
-print(results)
 
 # вывод в столбик
 for arr in results:
