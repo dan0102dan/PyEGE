@@ -22,13 +22,13 @@ with open('26.txt') as f:
 		else:
 			rows[r].append(p)
 		
-	res = (0, 0)
-	for r in sorted(rows.keys()):
-		rows[r].sort()
+res = (0, 0)
+for r in sorted(rows.keys()):
+	rows[r].sort()
 
-		for i in range(len(rows[r]) - 1):
-			if rows[r][i + 1] - rows[r][i] == K + 1:
-				if r > res[0]:
-					res = (r, rows[r][i] + 1)
+	for i in range(len(rows[r]) - 1):
+		if rows[r][i + 1] - rows[r][i] == K + 1:
+			res = (r, rows[r][i] + 1)
+			break
 
-	print(res)
+print(res)
