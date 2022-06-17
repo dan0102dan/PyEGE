@@ -13,8 +13,6 @@ def f(n, k):
 		return f(n + 1, k + 1) or f(n * 2, k + 1)
 	elif k == 4:
 		return results.append(n)
-	else:
-		return
 
 f(1, 0)
 print(sorted(set(results)))

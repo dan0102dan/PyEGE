@@ -12,7 +12,6 @@ def f(s, k):
 		result.add(s)
 	elif k < 3:
 		return f(s * 2, k + 1) or f(s * 3, k + 1)
-	else:
-		return
+
 f(2, 0)
 print(len(result))

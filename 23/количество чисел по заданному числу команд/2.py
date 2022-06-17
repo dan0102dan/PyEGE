@@ -13,8 +13,6 @@ def f(n, k):
 		return results.append(n)
 	elif k < 10:
 		return f(n + 2, k + 1) or f(n + 3, k + 1)
-	else:
-		return
 
 f(2, 0)
 print(len(set(results)))
