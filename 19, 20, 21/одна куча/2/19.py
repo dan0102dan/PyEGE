@@ -3,24 +3,23 @@
 # Известно, что Ваня выиграл своим первым ходом после неудачного первого хода Пети. Назовите минимальное значение S, при котором это возможно.
 
 
-TARGET = 30
-res = {}
+TARGET = 20
 
-def game(S):
-    if S in res:
-        return res[S]
+def game(S, superMove = False):
     if S >= TARGET:
         return 0
     
-    moves = [game(S+1), game(S*3)]
+    moves = [game(S * 2, superMove), game(S + 2, superMove)]
+    if not(superMove):
+        moves.append(game(S, True))
+
     winMoves = [x for x in moves if x <= 0]
 
     if winMoves:
-        step = - max(winMoves) + 1
+        step = -max(winMoves) + 1
     else:
-        step = - max(moves)
+        step = -max(moves)
     
-    res[S] = step
     return step
 
-print(min(S // 3 for S in range(29, 0, -1) if game(S) == 1 and S % 3 == 0))
+print(min((S // 2 for S in range(1, TARGET) if game(S) == 1 and S & 1 == 0)))
